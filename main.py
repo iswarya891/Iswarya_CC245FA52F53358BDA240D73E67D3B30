@@ -1,12 +1,16 @@
-#1.1 Implement a recursive function to calculate the factorial of a given number.
+def linear_search_product(products, target):
+  indices = []
 
-def fact_rec(n):
-  if n==0 or n==1:
-    return 1
-  else:
-    return n*fact_rec(n-1)
+  for i in range(len(products)):
+    if products[i] == target:
+      indices.append(i)
 
-number = 2
-res = fact_rec(number)
+  return indices
 
-print(" The Factorial of {} is {}".format(number,res))
+
+products = ["apple", "banana", "apple", "grapes", "apple"]
+target = "apple"
+print(linear_search_product(products, target))
+
+#Output:
+#[0, 2, 4]

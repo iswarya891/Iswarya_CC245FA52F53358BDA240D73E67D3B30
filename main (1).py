@@ -1,15 +1,17 @@
-# Leap year
-
-
-def isLeapYear(year):
-  if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
-    return True
-  else:
-    return False
-
-
-year = int(input("Enter a year : "))
-if isLeapYear(year):
-  print('{} is a leap year.'.format(year))
-else:
-  print('{} is not a leap year.'.format(year))
+def sort_students(students):
+    students.sort(key=lambda x: x.CGPA, reverse=True)
+class Student:
+    def __init__(self, name, roll_number, CGPA):
+        self.name = name
+        self.roll_number = roll_number
+        self.CGPA = CGPA
+students = [
+    Student("John", "18001", 9.8),
+    Student("Alice", "18003", 9.2),
+    Student("Bob", "18002", 9.5),
+    Student("Eva", "18005", 8.5),
+    Student("David", "18004", 9.0),
+]
+sort_students(students)
+for student in students:
+    print(student.name, student.roll_number, student.CGPA)
